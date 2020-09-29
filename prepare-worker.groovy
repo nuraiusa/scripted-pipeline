@@ -1,9 +1,3 @@
-properties([
-    parameters([
-        string(defaultValue: '', description: 'Input node IP', name: 'SSHNODE', trim: true)
-        ])
-    ])
-
 node {
     withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-master', keyFileVariable: 'SSHKEY', passphraseVariable: '', usernameVariable: 'SSHUSERNAME')]) {
         stage("Initialize") {
